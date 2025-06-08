@@ -39,6 +39,7 @@ function createDiv(){
 
 function createButton(styleCss,image,text){
     const btn = document.createElement("button");
+    btn.id ="btn-menu";
     btn.classList.add(styleCss);
     if(image){
         btn.appendChild(image);
@@ -84,5 +85,27 @@ export function createHeaderWeb(){
 }
 
 export function dropDownMenu(){
+    const menu = document.createElement("div");
+    menu.classList.add("menu-mobile");
+    const btnTech = createButton("btnNav",null,"TECNOLOGIAS");
+    const btnEducation = createButton("btnNav",null,"FORMACIÓN");
+    const btnProyect = createButton("btnNav",null,"PROYECTOS");
+    const btnContact = createButton("btnNav",null,"CONTACTO");
+    const btnClose =createButton("btnclose",null,"X");
+    btnClose.addEventListener("click",()=>{
     
+    const child = document.querySelector(".menu-mobile");
+    console.log("click en x");
+    if(child){
+        child.remove();
+    }
+})
+
+    menu.appendChild(btnTech);
+    menu.appendChild(btnEducation);
+    menu.appendChild(btnProyect);
+    menu.appendChild(btnContact);
+    menu.appendChild(btnClose);
+    return menu;
+
 }

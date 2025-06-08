@@ -1,11 +1,27 @@
 import { createHeaderMobile } from "./header.js";
 import { createHeaderWeb } from "./header.js";
-
+import { dropDownMenu } from "./header.js";
 const root = document.getElementById("root");
+
 
 window.addEventListener("resize",verifyResolution);
 
 verifyResolution();
+
+const buttonMenu = document.querySelector(".btn-menu"); // con punto si es clase
+
+buttonMenu.addEventListener("click", () => {
+  if (!document.querySelector(".menu-mobile")) {
+    const menu = dropDownMenu();
+     
+    root.appendChild(menu);
+  }
+});
+
+
+
+
+
 
 
 function verifyResolution(){
@@ -19,7 +35,7 @@ function verifyResolution(){
          root.removeChild(firstChild);
     }
     
-    if(width <= 800){
+    if(width <= 1024){
         const headerM = createHeaderMobile();
         root.appendChild(headerM);
 
