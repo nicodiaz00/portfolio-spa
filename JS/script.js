@@ -1,13 +1,20 @@
 import { createHeaderMobile } from "./header.js";
 import { createHeaderWeb } from "./header.js";
 import { dropDownMenu } from "./header.js";
+
+import { createHome } from "./home.js";
+
+
 const root = document.getElementById("root");
+const headerContainer = document.getElementById("header-container");
+const mainContainer = document.getElementById("main-container");
+
+window.addEventListener("resize", verifyResolution);
 
 
-window.addEventListener("resize",verifyResolution);
 
 verifyResolution();
-
+mainContainer.appendChild(createHome());
 const buttonMenu = document.querySelector(".btn-menu"); // con punto si es clase
 
 buttonMenu.addEventListener("click", () => {
@@ -24,23 +31,12 @@ buttonMenu.addEventListener("click", () => {
 
 
 
-function verifyResolution(){
-    const firstChild= root.children[0];
-    const width = window.innerWidth;
-    
-    if (
-        firstChild &&
-        (firstChild.classList.contains("headerContent") || firstChild.classList.contains("main-header"))
-    ) {
-         root.removeChild(firstChild);
-    }
-    
-    if(width <= 1024){
-        const headerM = createHeaderMobile();
-        root.appendChild(headerM);
+function verifyResolution() {
+  headerContainer.innerHTML = ""; // Limpia cualquier header anterior
 
-    }else{
-        const headerW = createHeaderWeb();
-        root.appendChild(headerW);
-    }
+  if (window.innerWidth <= 1024) {
+    headerContainer.appendChild(createHeaderMobile());
+  } else {
+    headerContainer.appendChild(createHeaderWeb());
+  }
 }
