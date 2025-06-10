@@ -14,8 +14,7 @@ export function createHome(){
     const divWelcome = createDiv();
     const divName = createDiv();
     const divSocialMedia = createDiv();
-    const divlinkedin = createDiv();
-    const divGitHub = createDiv();
+    
 
     home.classList.add("home-div");
     leftDiv.classList.add("left-div-home");
@@ -23,8 +22,7 @@ export function createHome(){
     divWelcome.classList.add("div-welcome");
     divName.classList.add("div-name");
     divSocialMedia.classList.add("div-social-media")
-    divlinkedin.classList.add("div-linkedin");
-    divGitHub.classList.add("div-git-hub");
+    
 
     const h2 = document.createElement("h2")
     h2.textContent ="BIENVENIDO.";
@@ -47,19 +45,28 @@ export function createHome(){
     divName.appendChild(h2developer);
 
     
-    const linkedin =document.createElement("img")
+    const linkedin = document.createElement("img")
     linkedin.src="IMAGES/linkedin.png";
+    const alinkedin = document.createElement("a");
+    alinkedin.href="https://www.linkedin.com/in/nicodiaz00/";
+    alinkedin.target = "_blank";
 
-    divlinkedin.appendChild(linkedin);
-
+    
+    
+    const aGitHub = document.createElement("a");
+    aGitHub.href = "https://github.com/nicodiaz00";
+    aGitHub.target = "_blank";
+    
     const gitHub = document.createElement("img");
     gitHub.src = "IMAGES/github.png";
+    
+    alinkedin.appendChild(linkedin);
+    aGitHub.appendChild(gitHub);
+    
 
-    divGitHub.appendChild(gitHub);
 
-
-    divSocialMedia.appendChild(divlinkedin);
-    divSocialMedia.appendChild(divGitHub);
+    divSocialMedia.appendChild(alinkedin);
+    divSocialMedia.appendChild(aGitHub);
 
     leftDiv.appendChild(divWelcome);
     leftDiv.appendChild(divName);
