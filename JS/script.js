@@ -3,6 +3,7 @@ import { createHeaderWeb } from "./header.js";
 import { dropDownMenu } from "./header.js";
 
 import { createHome } from "./home.js";
+import { createHomeMobile } from "./home.js";
 
 
 const root = document.getElementById("root");
@@ -12,9 +13,9 @@ const mainContainer = document.getElementById("main-container");
 window.addEventListener("resize", verifyResolution);
 
 
-
 verifyResolution();
-mainContainer.appendChild(createHome());
+
+
 const buttonMenu = document.querySelector(".btn-menu"); // con punto si es clase
 
 buttonMenu.addEventListener("click", () => {
@@ -33,10 +34,12 @@ buttonMenu.addEventListener("click", () => {
 
 function verifyResolution() {
   headerContainer.innerHTML = ""; // Limpia cualquier header anterior
-
+  mainContainer.innerHTML = "";
   if (window.innerWidth <= 1024) {
     headerContainer.appendChild(createHeaderMobile());
+    mainContainer.appendChild(createHomeMobile());
   } else {
     headerContainer.appendChild(createHeaderWeb());
+    mainContainer.appendChild(createHome());
   }
 }
