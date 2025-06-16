@@ -406,3 +406,40 @@ estilos home mobile
 .home-mobile-bottom > a > img:hover{
      transform: scale(1.1); /* agranda un 10% */
 }
+
+
+/*estilos education section*/
+.education-div{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    height: 100%;
+    background-color: yellow;
+}
+.div-top-education{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 70%;
+    
+}
+.div-bottom-education{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 30%;
+}
+.img-container{
+
+}
+.tittle-container{
+
+}
+.div-info{
+    display: flex;
+    flex-direction: row;
+    height: 20%;
+    width: 100%;
+    justify-content: center;
+    
+}

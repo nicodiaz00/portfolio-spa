@@ -10,7 +10,7 @@ export function createHeaderMobile(){
 
     const link= document.createElement("a");
     link.href="#";
-    link.textContent="ND";
+    link.textContent="[ND]";
 
     
 
