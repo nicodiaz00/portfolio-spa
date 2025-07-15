@@ -38,8 +38,13 @@ export function createEducationSection(){
 
     divInfo.appendChild(imgContainer);
     divInfo.appendChild(tittleContainer);
-
     
+    topEducation.appendChild(divInfo)
+
+    mainDiv.appendChild(topEducation);
+    mainDiv.appendChild(bottomEducation);
+
+    return mainDiv;
 
     
 }

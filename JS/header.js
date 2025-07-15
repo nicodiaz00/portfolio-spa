@@ -37,9 +37,9 @@ function createDiv(){
 
 }
 
-function createButton(styleCss,image,text){
+function createButton(styleCss,image,text, btnId){
     const btn = document.createElement("button");
-    btn.id ="btn-menu";
+    btn.id =btnId;
     btn.classList.add(styleCss);
     if(image){
         btn.appendChild(image);
@@ -67,10 +67,14 @@ export function createHeaderWeb(){
     const divRight = createDiv();
     divRight.classList.add("main-div-right");
 
-    const btnTech = createButton("btnNav",null,"TECNOLOGIAS");
-    const btnEducation = createButton("btnNav",null,"FORMACIÓN");
-    const btnProyect = createButton("btnNav",null,"PROYECTOS");
-    const btnContact = createButton("btnNav",null,"CONTACTO");
+    const btnTech = createButton("btnNav",null,"TECNOLOGIAS","btnTech");
+    const btnEducation = createButton("btnNav",null,"FORMACIÓN","btnEducation");
+
+    
+    const btnProyect = createButton("btnNav",null,"PROYECTOS","btnProyect");
+    const btnContact = createButton("btnNav",null,"CONTACTO","btnContact");
+
+
 
     divRight.appendChild(btnTech);
     divRight.appendChild(btnEducation);
